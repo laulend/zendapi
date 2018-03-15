@@ -98,7 +98,7 @@ public:
    Variant(DoubleVariant &value, bool isRef);
    Variant(StringVariant &value, bool isRef);
    Variant(ArrayVariant &value, bool isRef);
-   
+
    Variant(const BoolVariant &value);
    Variant(const NumericVariant &value);
    Variant(const StringVariant &value);
@@ -121,6 +121,7 @@ public:
    Variant(char (&value)[arrayLength], T length);
    template <size_t arrayLength>
    Variant(char (&value)[arrayLength]);
+
    /**
     * Wrap object around zval
     * @param  zval Zval to wrap
@@ -157,8 +158,10 @@ public:
    Variant &operator =(std::int8_t value);
    Variant &operator =(std::int16_t value);
    Variant &operator =(std::int32_t value);
+
 #if SIZEOF_ZEND_LONG == 8
    Variant &operator =(std::int64_t value);
+
 #endif
    Variant &operator =(bool value);
    Variant &operator =(char value);
